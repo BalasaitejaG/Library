@@ -1,0 +1,41 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %} Library Management System {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<head>
+  <link rel="stylesheet" href="{%static 'login_card.css'%}">
+</head>
+<body>
+<div class="p-4 bg-light">
+    <div class="container-fluid py-3">
+      <h1 class="display-5 fw-bold"><center>Welcome to online Library Management System</center></h1>
+      <br>
+      <br>
+      <p class="paragraph"><center style="font-size: 22px;">An online library management system is a digital platform designed to streamline the management of library resources, services, and user interactions. It serves as a centralized tool for librarians, administrators, and students to efficiently handle various library-related tasks. Here are a few key aspects and features of such a system</center></p>
+    </div>
+    <br>
+    <br>
+    <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 mb-3 m"> 
+        <div class="card">
+          <p class="heading">ADMIN</p>
+          </p><div class="overlay"></div>
+          <a class="card-btn" href="/admin_login/">Login</a>
+        </div>
+      </div>
+      <div class="col-sm-6 mb-3 ">
+        <div class="card">
+          <p class="heading">Student</p>
+          </p><div class="overlay"></div>
+          <a class="card-btn" href="/student_login/">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+{% endblock %}
