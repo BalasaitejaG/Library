@@ -2,40 +2,103 @@
 {% load static %}
 {% block title %} Library Management System {% endblock %}
 {% block css %}
+  <link rel="stylesheet" href="{% static 'login_card.css' %}">
+  <style>
+    /* Style the body for a pleasing background */
+    body {
+      background-image: url("{% static 'library.jpg' %}"); /* Replace with your desired background image */
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Style the container for better centering and spacing */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* Style the cards for a more modern and visually appealing look */
+    .card {
+      width: 250px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease-in-out;
+      margin: 10px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      cursor: pointer;
+    }
+
+    /* Style the headings for a clear distinction between user types */
+    .heading {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* Style the login buttons for a call to action effect */
+    .card-btn {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .card-btn:hover {
+      background-color: #222;
+    }
+
+    /* Style the overlay (optional, for a hover effect on the cards) */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .card:hover .overlay {
+      opacity: 0.3;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  </style>
 {% endblock %}
+
 {% block body %}
-<head>
-  <link rel="stylesheet" href="{%static 'login_card.css'%}">
-</head>
 <body>
-<div class="p-4 bg-light">
-    <div class="container-fluid py-3">
-      <h1 class="display-5 fw-bold"><center>Welcome to online Library Management System</center></h1>
-      <br>
-      <br>
-      <p class="paragraph"><center style="font-size: 22px;">An online library management system is a digital platform designed to streamline the management of library resources, services, and user interactions. It serves as a centralized tool for librarians, administrators, and students to efficiently handle various library-related tasks. Here are a few key aspects and features of such a system</center></p>
-    </div>
-    <br>
-    <br>
-    <br>
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 mb-3 m"> 
+      <div class="col-sm-6 mb-3 m">
         <div class="card">
           <p class="heading">ADMIN</p>
-          </p><div class="overlay"></div>
+          <div class="overlay"></div>
           <a class="card-btn" href="/admin_login/">Login</a>
         </div>
       </div>
       <div class="col-sm-6 mb-3 ">
         <div class="card">
           <p class="heading">Student</p>
-          </p><div class="overlay"></div>
+          <div class="overlay"></div>
           <a class="card-btn" href="/student_login/">Login</a>
         </div>
       </div>
     </div>
   </div>
-</div>
 </body>
 {% endblock %}
