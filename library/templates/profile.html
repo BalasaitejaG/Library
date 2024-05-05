@@ -24,6 +24,12 @@ border-radius: 0;
 font-size: 15px;
 background: #212529b8;
 }
+
+.buttons_op{
+    display: flex;
+    margin-top: 2rem;
+    gap: 1rem;
+}
 </style>
 {% endblock %}
 {% block body %}
@@ -103,7 +109,12 @@ background: #212529b8;
                             </div>
                         </div>
                     </div>
-                    <a href="/edit_profile/" style="width: 9rem;" class="btn btn-outline-primary mt-3">Edit Profile</a>
+                    <div class="buttons_op">
+                        {% comment %} <a href="/edit_profile/" style="width: 9rem;" class="btn btn-outline-primary mt-3">Edit Profile</a> {% endcomment %}
+                        {% comment %} <a class="btn btn-outline-secondary mt-3" style="width: 9rem;" aria-current="page" href="/change_password/">Change Password</a>
+                        <a class="btn btn-danger mt-3" style="width: 9rem;" aria-current="page" href="/logout/">Logout</a> {% endcomment %}
+                    </div>
+                    
                 </div>
             </div>
 </div>

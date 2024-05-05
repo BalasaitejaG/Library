@@ -31,6 +31,11 @@ def view_books(request):
     books = Book.objects.all()
     return render(request, "view_books.html", {'books':books})
 
+@login_required(login_url = '/student_login')
+def student_view_books(request):
+    books = Book.objects.all()
+    return render(request, "student_view_books.html", {'books':books})
+
 @login_required(login_url = '/admin_login')
 def view_students(request):
     students = Student.objects.all()
@@ -203,7 +208,7 @@ def admin_login(request):
         if user is not None:
             login(request, user)
             if request.user.is_superuser:
-                return redirect("/add_book")
+                return redirect("/view_students")  #add the new admin home page here
             else:
                 return HttpResponse("You are not an admin.")
         else:
