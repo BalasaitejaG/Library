@@ -8,8 +8,14 @@ html {
 body {
   font-family: "Open Sans";
   font-weight: 100;
-  display: flex;
   overflow: hidden;
+}
+
+.all{
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 32vh;
 }
 input {
   ::-webkit-input-placeholder {

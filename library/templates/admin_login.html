@@ -1,16 +1,14 @@
-{% extends 'basic.html' %}
-{% load static %}
-{% block title %} Library Management System {% endblock %}
-{% block css %}
-{% endblock %}
-{% block body %}
+{% extends 'basic.html' %} {% load static %} {% block title %} Library
+Management System {% endblock %} {% block css %} {% endblock %} {% block body %}
 <head>
-    <link rel="stylesheet" href="{% static 'admin_login.css' %}">
-    <title>Admin Login</title>
+  <link rel="stylesheet" href="{% static 'admin_login.css' %}" />
+  <title>Admin Login</title>
 </head>
 <head>
-    <link rel="stylesheet" href="{%static 'admin_login.css'%}" />
-  </head>
+  <link rel="stylesheet" href="{%static 'admin_login.css'%}" />
+</head>
+
+<div class="all">
   <form method="POST" class="login-form">
     {% csrf_token %}
     <p class="login-text">
@@ -38,13 +36,12 @@
   <a href="#" class="login-forgot-pass">forgot password?</a>
   <div class="underlay-photo"></div>
   <div class="underlay-black"></div>
-  
-{% endblock %}
-{% block js %}
+</div>
+{% endblock %} {% block js %}
 <script>
-    {% if alert %}
-    alert("Invalid Username or Password.")
-    document.location = "/admin_login"
-    {% endif %}
+  {% if alert %}
+  alert("Invalid Username or Password.")
+  document.location = "/admin_login"
+  {% endif %}
 </script>
 {% endblock %}
