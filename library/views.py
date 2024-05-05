@@ -191,7 +191,7 @@ def student_login(request):
         if user is not None:
             login(request, user)
             if request.user.is_superuser:
-                return HttpResponse("You are not a student!!")
+                return HttpResponse("Invalid Password or Username`")
             else:
                 return redirect("/profile")
         else:
@@ -210,7 +210,7 @@ def admin_login(request):
             if request.user.is_superuser:
                 return redirect("/view_students")  #add the new admin home page here
             else:
-                return HttpResponse("You are not an admin.")
+                return HttpResponse("Invalid Password or Username")
         else:
             alert = True
             return render(request, "admin_login.html", {'alert':alert})
