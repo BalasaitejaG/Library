@@ -126,7 +126,7 @@ def delete_book(request, myid):
 def delete_issue(request, myid):
     books = Book.objects.filter(id=myid)
     books.delete()
-    return redirect("/student_issued_books.html")
+    return redirect("/student_issued_books")
 
 def delete_student(request, myid):
     students = Student.objects.filter(id=myid)
