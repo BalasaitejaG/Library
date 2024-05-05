@@ -1,35 +1,41 @@
 {% extends 'basic.html' %}
-{% load static %}
-{% block title %} Library Management System {% endblock %}
-{% block css %}
-{% endblock %}
+{% load static %} 
+{% block title %} 
+Library Management System 
+{% endblock %} 
+{% block css %} 
+{% endblock %} 
 {% block body %}
-<div class="container">
-<br>
-<h1 class="text-center"><u>Student Login</u></h1>
-    <form method="POST"> {% csrf_token %}
 
-    <div class="row mt-4">
-        <div class="form-group col-md-12">
-            <label><i style="font-weight: bold;">Username</i></label>
-            <input type="text" class="form-control mt-2" name="username" placeholder="Enter Username" required>
-        </div>
-    </div>
+<head>
+  <link rel="stylesheet" href="{%static 'student_login.css'%}" />
+</head>
+<form method="POST" class="login-form">
+  {% csrf_token %}
+  <p class="login-text">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-lock fa-stack-1x"></i>
+    </span>
+  </p>
+  <input
+    type="text"
+    class="login-username"
+    name="username"
+    placeholder="Enter Username"
+    required
+  />
+  <input
+    type="password"
+    class="login-password"
+    name="password"
+    placeholder="Enter Password"
+    required
+  />
+  <button type="submit" class="login-submit">Login</button>
+</form>
+<a href="#" class="login-forgot-pass">forgot password?</a>
+<div class="underlay-photo"></div>
+<div class="underlay-black"></div>
 
-    <div class="row mt-4">
-        <div class="form-group col-md-12">
-            <label><i style="font-weight: bold;">Password</i></label>
-            <input type="password" class="form-control mt-2" name="password" placeholder="Enter Password" required>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-outline-primary mt-4">Login</button>
-</div>
-{% endblock %}
-{% block js %}
-<script>
-    {% if alert %}
-    alert("Invalid Username or Password.")
-    document.location = "/student_login"
-    {% endif %}
-</script>
 {% endblock %}

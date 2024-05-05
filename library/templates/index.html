@@ -1,85 +1,67 @@
-{% extends 'basic.html' %}
-{% load static %}
-{% block title %} Library Management System {% endblock %}
-{% block css %}
-  <link rel="stylesheet" href="{% static 'login_card.css' %}">
-  <style>
-    /* Style the body for a pleasing background */
-    body {
-      background-image: url("{% static 'library.webp' %}"); /* Replace with your desired background image */
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      margin: 0;
-    }
+{% extends 'basic.html' %} {% load static %} {% block title %} Library
+Management System {% endblock %} {% block css %}
+<style>
+      /* Style the body for a pleasing background */
+      body {
+        background-image: url("{% static 'library.webp' %}"); /* Replace with your desired background image */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+      }
+ 
+      /* Style the container for better centering and spacing */
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
 
-    /* Style the container for better centering and spacing */
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-    }
+      /* Style the cards for a more modern and visually appealing look */
+      .card {
+        width: 250px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s ease-in-out;
+        margin: 10px;
+        text-align: center;
+        padding: 20px;
+      }
 
-    /* Style the cards for a more modern and visually appealing look */
-    .card {
-      width: 250px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: all 0.2s ease-in-out;
-      margin: 10px;
-      text-align: center;
-      padding: 20px;
-    }
+      .card:hover {
+        transform: scale(1.02);
+        cursor: pointer;
+      }
 
-    .card:hover {
-      transform: scale(1.02);
-      cursor: pointer;
-    }
+      /* Style the headings for a clear distinction between user types */
+      .heading {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      
 
-    /* Style the headings for a clear distinction between user types */
-    .heading {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
+      /* Style the login buttons for a call to action effect */
+      .card-btn {
+        text-decoration: none;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
 
-    /* Style the login buttons for a call to action effect */
-    .card-btn {
-      background-color: #333;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .card-btn:hover {
-      background-color: #222;
-    }
-
-    /* Style the overlay (optional, for a hover effect on the cards) */
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    .card:hover .overlay {
-      opacity: 0.3;
-      background-color: rgba(0, 0, 0, 0.3);
-    }
-  </style>
-{% endblock %}
-
+      .card-btn:hover {
+        background-color: #222;
+      }
+</style>
+{% endblock %} 
 {% block body %}
 <body>
   <div class="container">
@@ -91,7 +73,7 @@
           <a class="card-btn" href="/admin_login/">Login</a>
         </div>
       </div>
-      <div class="col-sm-6 mb-3 ">
+      <div class="col-sm-6 mb-3">
         <div class="card">
           <p class="heading">Student</p>
           <div class="overlay"></div>
