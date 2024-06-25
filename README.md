@@ -76,10 +76,6 @@ This project is a web-based Online Library Management System built using the Dja
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - Thanks to the Django community for providing excellent documentation and support.
